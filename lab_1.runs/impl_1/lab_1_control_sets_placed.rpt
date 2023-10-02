@@ -1,0 +1,89 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1.1 (lin64) Build 3900603 Fri Jun 16 19:30:25 MDT 2023
+| Date         : Thu Sep 14 14:58:32 2023
+| Host         : sadhanpawar-ThinkPad-E14-Gen-4 running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_control_sets -verbose -file lab_1_control_sets_placed.rpt
+| Design       : lab_1
+| Device       : xc7z007s
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    11 |
+|    Minimum number of control sets                        |    11 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    35 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    11 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     6 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              12 |            8 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              45 |           12 |
+| Yes          | No                    | No                     |               7 |            4 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              85 |           26 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+-------------------+-----------------------------+------------------+----------------+--------------+
+|    Clock Signal   |   Enable Signal   |       Set/Reset Signal      | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------+-------------------+-----------------------------+------------------+----------------+--------------+
+|  CLK100_IBUF_BUFG | c16/dv_500/E[0]   | reset                       |                1 |              1 |         1.00 |
+|  CLK100_IBUF_BUFG | sg/dv_5/out_reg_0 | sg/dv_5/out_reg_1           |                1 |              2 |         2.00 |
+|  CLK100_IBUF_BUFG | sg/dv_5/out_reg_0 | sg/anodes[2]_i_1_n_0        |                1 |              2 |         2.00 |
+|  CLK100_IBUF_BUFG | sg/dv_5/out_reg_0 |                             |                4 |              7 |         1.75 |
+|  CLK100_IBUF_BUFG |                   |                             |                8 |             12 |         1.50 |
+|  CLK100_IBUF_BUFG | match             | c16/matchvalue_2            |                4 |             16 |         4.00 |
+|  CLK100_IBUF_BUFG | max               | c16/max_val_1               |                5 |             16 |         3.20 |
+|  CLK100_IBUF_BUFG | min               | c16/min_val_0               |                6 |             16 |         2.67 |
+|  CLK100_IBUF_BUFG |                   | sg/dv_5/count[0]_i_1__0_n_0 |                5 |             19 |         3.80 |
+|  CLK100_IBUF_BUFG |                   | c16/dv_500/count[0]_i_1_n_0 |                7 |             26 |         3.71 |
+|  CLK100_IBUF_BUFG | c16/dv_500/E[0]   | c16/dv_500/SR[0]            |                8 |             32 |         4.00 |
++-------------------+-------------------+-----------------------------+------------------+----------------+--------------+
+
+
